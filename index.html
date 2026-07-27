@@ -1,83 +1,103 @@
 <!DOCTYPE html>
-<html lang="ar">
+<html lang="ar" dir="rtl">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>NASRI STORE</title>
-
-<style>
-body{
-margin:0;
-background:#0d0d0d;
-font-family:Arial,sans-serif;
-color:white;
-text-align:center;
-}
-
-header{
-padding:20px;
-background:#111;
-font-size:32px;
-font-weight:bold;
-color:#d4af37;
-}
-
-.hero{
-padding:80px 20px;
-}
-
-h1{
-font-size:45px;
-margin:0;
-}
-
-p{
-font-size:20px;
-color:#ccc;
-}
-
-button{
-margin-top:30px;
-padding:15px 35px;
-font-size:18px;
-background:#d4af37;
-color:black;
-border:none;
-border-radius:10px;
-cursor:pointer;
-}
-
-footer{
-margin-top:80px;
-padding:20px;
-background:#111;
-color:#888;
-}
-</style>
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NASRI STORE - Premium Fashion</title>
+    <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
-<header>
-NASRI STORE
-</header>
+    <!-- Header / Navbar -->
+    <header class="navbar">
+        <div class="logo">NASRI STORE</div>
+        <nav>
+            <a href="#hero">الرئيسية</a>
+            <a href="#men">رجال</a>
+            <a href="#women">نساء</a>
+            <a href="#cart" class="cart-btn">🛒 السلة (<span id="cart-count">0</span>)</a>
+        </nav>
+    </header>
 
-<section class="hero">
-<h1>Premium Fashion</h1>
+    <!-- Hero Section -->
+    <section id="hero" class="hero">
+        <div class="hero-content">
+            <h1>NASRI STORE</h1>
+            <p>Fashion For Men & Women | أزياء فاخرة للرجال والنساء</p>
+            <div class="badges">
+                <span>⭐ تقييم 5 نجوم</span>
+                <span>🚚 الدفع عند الاستلام (Cash on Delivery)</span>
+            </div>
+            <a href="#products" class="btn-main">تسوق الآن | Shop Now</a>
+        </div>
+    </section>
 
-<p>Men & Women Collection</p>
+    <!-- Products Section -->
+    <section id="products" class="products-section">
+        <h2>أحدث تشكيلة | New Collection</h2>
+        
+        <div class="product-grid">
+            <!-- Product 1 -->
+            <div class="product-card">
+                <div class="product-tag">رجال</div>
+                <div class="product-icon">👕</div>
+                <h3>T-Shirt Premium</h3>
+                <p class="price">49 TND</p>
+                <button class="add-to-cart-btn" onclick="addToCart('T-Shirt Premium', 49)">إضافة للسلة</button>
+            </div>
 
-<button>Shop Now</button>
+            <!-- Product 2 -->
+            <div class="product-card">
+                <div class="product-tag">رجال</div>
+                <div class="product-icon">👖</div>
+                <h3>Jeans Classic</h3>
+                <p class="price">89 TND</p>
+                <button class="add-to-cart-btn" onclick="addToCart('Jeans Classic', 89)">إضافة للسلة</button>
+            </div>
 
-</section>
+            <!-- Product 3 -->
+            <div class="product-card">
+                <div class="product-tag">نساء</div>
+                <div class="product-icon">👗</div>
+                <h3>Elegant Dress</h3>
+                <p class="price">120 TND</p>
+                <button class="add-to-cart-btn" onclick="addToCart('Elegant Dress', 120)">إضافة للسلة</button>
+            </div>
 
-<footer>
-© 2026 NASRI STORE
-</footer>
-<script src="script.js"></script>
+            <!-- Product 4 -->
+            <div class="product-card">
+                <div class="product-tag">أحذية</div>
+                <div class="product-icon">👟</div>
+                <h3>Sneakers Sport</h3>
+                <p class="price">110 TND</p>
+                <button class="add-to-cart-btn" onclick="addToCart('Sneakers Sport', 110)">إضافة للسلة</button>
+            </div>
+        </div>
+    </section>
 
+    <!-- Order / Cart Section -->
+    <section id="cart" class="cart-section">
+        <h2>سلة المشتريات وإتمام الطلب</h2>
+        <div id="cart-items" class="cart-items">
+            <p>السلة فارغة حالياً.</p>
+        </div>
+        <div class="cart-summary">
+            <h3>المجموع: <span id="total-price">0</span> TND</h3>
+        </div>
+
+        <form class="checkout-form" onsubmit="submitOrder(event)">
+            <h3>بيانات التوصيل (الدفع عند الاستلام)</h3>
+            <input type="text" placeholder="الاسم الكامل" required>
+            <input type="tel" placeholder="رقم الهاتف" required>
+            <input type="text" placeholder="العنوان / المدينة" required>
+            <button type="submit" class="btn-checkout">تأكيد الطلب الآن</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>© 2026 NASRI STORE - جميع الحقوق محفوظة</p>
+    </footer>
+
+    <script src="script.js"></script>
 </body>
-
-
 </html>
